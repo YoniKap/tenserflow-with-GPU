@@ -7,11 +7,18 @@ steps:
 ### 1. Install GPU Driver
 
 Install the appropriate NVIDIA GPU driver for your computer.
-gpu info:
-<!-- lspci | grep -i nvidia | sed -n 's/.*\[\(.*\)\].*/\1/p' -->
+for the exact model of your gpu run command:
+
+```bash
+lspci | grep -i nvidia | sed -n 's/.*\[\(.*\)\].*/\1/p'
+```
+
+
 ### 2. Install CUDA Toolkit
 
 Install the CUDA toolkit, which allows software to use GPUs for general-purpose processing.
+
+https://developer.nvidia.com/cuda-downloads
 
 ### 3. Create a Conda Environment
 
@@ -20,27 +27,47 @@ install conda if it doesnt exst on your system :
 https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
 
-<!-- <note> to skip levels 3,4 given that anaconda is already installed you can run the following command: conda env create -f environment.yml   -->
+  ### <note> to skip levels 3,4 given that anaconda is already 
+  ### installed you can run the following command:
+  ```bash
+  conda env create -f environment.yml
+  ```  
 
 Open a terminal and switch to your root user, then create a new Conda environment with Python 3.8: 
-"conda create --name <env-name> python=3.8"
 
+```bash
+conda create --name <env-name> python=3.8
+```
 
+activate the environment you created using command: 
+
+```bash
+conda activate <env-name>
+```
+ your terminal will be formatted in the following way (bash):
+
+ ```bash
+ (<env-name>) [root@hostname tenserflow]#
+ ```
 ### 4. Install TensorFlow
 
 Inside the created Conda environment, install TensorFlow:
-
+```bash
 conda install -c conda-forge cudatoolkit=11.8.0
 python3 -m pip install nvidia-cudnn-cu11==8.6.0.163 tensorflow==2.13.*
 mkdir -p $CONDA_PREFIX/etc/conda/activate.d
 echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.file)"))' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 echo 'export LD_LIBRARY_PATH=$CUDNN_PATH/lib:$CONDA_PREFIX/lib/:$LD_LIBRARY_PATH' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-
+```
 ### 5. Monitor GPU Usage
 
 Watch and monitor the processes running on your GPU using the following command:
-"watch -n 1 nvidia-smi"  (SMI = systems management interface)
+
+```bash
+watch -n 1 nvidia-smi  
+```
+(SMI = systems management interface)
 
 
 ```bash
@@ -72,7 +99,7 @@ Watch and monitor the processes running on your GPU using the following command:
 ### 6. Run TensorFlow Code
 
 While inside the Conda environment you created, navigate to the directory with the TensorFlow code (e.g., `test.py`) and execute it
-using cli command "python test.py" , if everything is configured correctly you should see a process named python in the nvidia smi  while the file is being executed. also during the execution output in the terminal you will see the name of your GPU  :
+using cli command ```python test.py``` , if everything is configured correctly you should see a process named python in the nvidia smi  while the file is being executed. also during the execution output in the terminal you will see the name of your GPU  :
 
 Example:
 ```bash
