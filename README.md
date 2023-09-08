@@ -14,6 +14,8 @@ Install the CUDA toolkit, which allows software to use GPUs for general-purpose 
 
 ### 3. Create a Conda Environment
 
+<!-- note to skip levels 3,4 you can run tyhe following command conda env create -f environment.yml   -->
+
 Open a terminal and switch to your root user, then create a new Conda environment with Python 3.8: 
 "conda create --name <env-name> python=3.8"
 
