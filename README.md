@@ -15,7 +15,12 @@ Install the CUDA toolkit, which allows software to use GPUs for general-purpose 
 
 ### 3. Create a Conda Environment
 
-<!-- note to skip levels 3,4 you can run tyhe following command: conda env create -f environment.yml   -->
+
+install conda if it doesnt exst on your system :
+https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
+
+
+<!-- <note> to skip levels 3,4 given that anaconda is already installed you can run the following command: conda env create -f environment.yml   -->
 
 Open a terminal and switch to your root user, then create a new Conda environment with Python 3.8: 
 "conda create --name <env-name> python=3.8"
@@ -67,7 +72,7 @@ Watch and monitor the processes running on your GPU using the following command:
 ### 6. Run TensorFlow Code
 
 While inside the Conda environment you created, navigate to the directory with the TensorFlow code (e.g., `test.py`) and execute it
-using cli command "python test.py" , if everything is configured correctly you should see a process named python in the nvidia smi  while the file is being executed. also guring the execution output in the terminal oyu will see the name of your GPU  :
+using cli command "python test.py" , if everything is configured correctly you should see a process named python in the nvidia smi  while the file is being executed. also during the execution output in the terminal you will see the name of your GPU  :
 
 Example:
 ```bash
