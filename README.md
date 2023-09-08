@@ -32,7 +32,7 @@ source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 ### 5. Monitor GPU Usage
 
 Watch and monitor the processes running on your GPU using the following command:
-"watch -n 1 nvidia-smi"
+"watch -n 1 nvidia-smi"  (SMI = systems management interface)
 
 
 Fri Sep  8 15:42:03 2023       
@@ -62,7 +62,8 @@ Fri Sep  8 15:42:03 2023
 
 ### 6. Run TensorFlow Code
 
-While inside the Conda environment you created, navigate to the directory with the TensorFlow code (e.g., `test.py`) and execute it:
+While inside the Conda environment you created, navigate to the directory with the TensorFlow code (e.g., `test.py`) and execute it
+using cli command "python test.py" , if everything is configured correctly you should see a process named python in the nvidia smi  while the file is being executed.  :
 
 Example:
 
