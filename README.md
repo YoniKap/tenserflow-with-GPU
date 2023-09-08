@@ -63,7 +63,7 @@ Fri Sep  8 15:42:03 2023
 ### 6. Run TensorFlow Code
 
 While inside the Conda environment you created, navigate to the directory with the TensorFlow code (e.g., `test.py`) and execute it
-using cli command "python test.py" , if everything is configured correctly you should see a process named python in the nvidia smi  while the file is being executed.  :
+using cli command "python test.py" , if everything is configured correctly you should see a process named python in the nvidia smi  while the file is being executed. also guring the execution output in the terminal oyu will see the name of your GPU  :
 
 Example:
 
