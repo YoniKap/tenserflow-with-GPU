@@ -14,7 +14,7 @@ lspci | grep -i nvidia | sed -n 's/.*\[\(.*\)\].*/\1/p'
 ```
 
 
-### 2. Install CUDA Toolkit
+### 2. Install CUDA Toolkit (optional since cuda will be installed on our conda env)
 
 Install the CUDA toolkit, which allows software to use GPUs for general-purpose processing.
 
@@ -99,7 +99,9 @@ watch -n 1 nvidia-smi
 ### 6. Run TensorFlow Code
 
 While inside the Conda environment you created, navigate to the directory with the TensorFlow code (e.g., `test.py`) and execute it
-using cli command ```python test.py``` , if everything is configured correctly you should see a process named python in the nvidia smi  while the file is being executed. also during the execution output in the terminal you will see the name of your GPU  :
+using cli command `python test.py` , if everything is configured correctly you should see a process named python in the nvidia smi  while the file is being executed. also during the execution output in the terminal you will see the name of your GPU  :
+
+note that you can also run `hello world.py` but its runtime is very fast.
 
 Example:
 ```bash
