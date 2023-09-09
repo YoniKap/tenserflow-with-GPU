@@ -23,7 +23,7 @@ https://developer.nvidia.com/cuda-downloads
 ### 3. Create a Conda Environment
 
 
-install conda if it doesnt exst on your system :
+install conda if it doesnt exist on your system :
 https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
 
@@ -51,7 +51,7 @@ conda activate <env-name>
  ```
 ### 4. Install TensorFlow
 
-Inside the created Conda environment, install TensorFlow:
+Inside the created Conda environment, install TensorFlow conda toolkit will also be installed:
 ```bash
 conda install -c conda-forge cudatoolkit=11.8.0
 python3 -m pip install nvidia-cudnn-cu11==8.6.0.163 tensorflow==2.13.*
